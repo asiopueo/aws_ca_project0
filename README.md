@@ -55,7 +55,7 @@ Spend a few minutes going through the .yml files in the _starter_ folder to get 
 ## Task 3: Deployment of Initial Infrastructure
 In this task, the objective is to deploy the cloudformation stack that will create the below environment.
 
-![base environment](/starter/AWS-WebServiceDiagram-v1-noHA.png)
+![base environment](starter/AWS-WebServiceDiagram-v1-noHA.png)
 
 This is a starting point environment which does _not_ have redundancy or fault tolerance.  It has the basic components needed to make the application work.
 
@@ -77,11 +77,11 @@ Expected example output:
 Expected example AWS Console status: 
 https://console.aws.amazon.com/cloudformation/home?region=us-east-1#/stacks
 
-![Expected AWS Console Status](131.png)
+![Expected AWS Console Status](images/131.png)
 
 2. Once you see Status is CREATE_COMPLETE, determine the name of the S3 bucket by navigating to the Outputs section of the stack:
 
-![Outputs Section](132.png)
+![Outputs Section](images/132.png)
 
 3. Upload the code to the S3 bucket that has been created by typing this command into the console (you will replace bucket value with your bucket value):
  
@@ -104,15 +104,15 @@ Expected response:
 
 5. Check the console for completion - allow 10-20 minutes.
 
-![Completion](135.png)
+![Completion](images/135.png)
 
 6. Take a look at the resources that have been deployed by going to the console for EC2 and RDS.  
 
-![Example for EC2](136.png)
+![Example for EC2](images/136.png)
 
 7. You will need the Application Load Balancer endpoint to test the web service.  You can get this from the Outputs section of the **applicationEnvironment-ec2** stack.
 
-![Application Load Balancer](137.png)
+![Application Load Balancer](images/137.png)
 
 ## Task 4: Testing the Web Service
 
@@ -123,7 +123,7 @@ _http://<application load balancer dns name>/health_
 
 You should see the following response returned by the API call.
 
-![Expected Content](14.png)
+![Expected Content](images/14.png)
 
 ## Exercise 2: Monitoring for Availability and Testing Failure
 
@@ -153,7 +153,7 @@ In this task, the objective is to set up a Route53 health check that will simula
 
 See an Example below:
 
-![HealthCheckExample](212.png)
+![HealthCheckExample](images/212.png)
 
 
 ### Task 2: Dashboard for Application Health
@@ -424,7 +424,7 @@ The updated diagram should clearly illustrate:
 
 ## Required Screenshots and File Uploads:
 
-![final](final.png)
+![final](images/final.png)
 
 ## Built With
 
