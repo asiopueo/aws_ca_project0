@@ -45,7 +45,7 @@ Resources:
       EngineVersion: 5.7.26
       MasterUsername: admin
       MasterUserPassword: jerky1999
-      MultiAZ: False
+      MultiAZ: True
       VPCSecurityGroups:
       - !Ref DBIngressSG
 

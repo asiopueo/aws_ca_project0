@@ -66,7 +66,27 @@ Resources:
           sleep 30
           service flask restart
 
-# Add code for Exercise 3
+    # Additional code for Exercise 3:
+    AppInstance2:
+      Type: AWS::EC2::Instance
+      Properties:
+        ImageId: !Ref AmiId
+        InstanceType: t3.micro
+        SecurityGroupIds:
+        - !GetAtt WebAppSG.GroupId
+        SubnetId: !Ref SubnetId2
+        Tags:
+        - Key: "Name"
+          Value: "Web Service Instance 2 - C1"
+        UserData:
+          Fn::Base64: !Sub |
+            #!/bin/bash
+            echo "Environment=DB_HOST="${DbHost} | sudo tee -a /lib/systemd/system/flask.service
+            echo "Environment=DB_USER="${DbUser} | sudo tee -a /lib/systemd/system/flask.service
+            echo "Environment=DB_PASSWORD="${DbPassword} | sudo tee -a /lib/systemd/system/flask.service
+            systemctl daemon-reload
+            sleep 30
+            service flask restart
           
   AppEIP:
     Type: AWS::EC2::EIP
