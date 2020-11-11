@@ -1,3 +1,38 @@
-# Single instance, Single AZ RDS DB environment usage cost
+Assumption: 30 days per month, on-demand instances
+
+# Single instance, Single AZ RDS DB environment usage cost:
+RDS:
+    db.t3.micro
+        0.017 USD/h
+        0.408 USD/d
+        12.24 USD/m
+EC2 instances:
+    t3.micro
+        0.0104 USD/h
+        0.2496 USD/d
+        7.488 USD/m
+EC2 Application Load Balancer:
+        0.0225 USD/h
+        0.54 USD/d
+        10.80 USD/m
+Total:
+        30.523 USD/m
+
 
 # 2 Instances, Multi-AZ RDS DB environment usage cost:
+RDS:
+    db.t3.micro (Multi-AZ)
+        0.034 USD/h
+        0.816 USD/d
+        19.584 USD/m
+EC2 instances:
+    t3.micro (x2)
+        0.0208 USD/h
+        0.4992 USD/d
+        14.986 USD/m
+EC2 Application Load Balancer:
+        0.0225 USD/h
+        0.54 USD/d
+        10.80 USD/m
+Total:
+        45.37 USD/m
